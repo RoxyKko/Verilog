@@ -32,7 +32,7 @@ begin
     begin
         div6 <= 1'b0;
     end
-    else if(counter == 3'd2)
+    else if(counter < 3'd3)
     begin
         div6 <= 1'b1;
     end
