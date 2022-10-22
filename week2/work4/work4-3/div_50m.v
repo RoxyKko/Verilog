@@ -18,7 +18,14 @@ begin
     end
     else
     begin
-        cnt26 <= cnt26 + 1;
+        if(cnt26 == 26'd49_999)
+        begin
+            cnt26 <= 26'd0;
+        end
+        else
+        begin
+            cnt26 <= cnt26 + 1;
+        end
     end
 end
 
@@ -28,7 +35,7 @@ begin
     begin
         clk_50khz <= 1'd0;
     end
-    else if(cnt26 == 26'd49_999_999)
+    else if(cnt26 < 26'd24_999)
     begin
         clk_50khz <= 1'd1;
     end
