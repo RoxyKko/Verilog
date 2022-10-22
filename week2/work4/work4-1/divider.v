@@ -13,7 +13,7 @@ reg [7:0]cnt8;
 
 always @(posedge clk)
     begin
-        if(cnt8 == 8'd11111111)
+        if(cnt8 == 8'd255)
         begin
             cnt8 <= d;
         end
@@ -26,7 +26,7 @@ always @(posedge clk)
 
 always @(posedge cnt8)
     begin
-        if(cnt8 == 8'd11111110)
+        if(cnt8 < 8'd128)
         begin
             cout <= 1'b1;
         end
