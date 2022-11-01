@@ -38,11 +38,11 @@ begin
     end
     else if (q == 4'b1001)
     begin
-        count <= count + 1;
+        count <= 1;
     end
     else
     begin
-        count <= count;
+        count <= 0;
     end
 end
 
