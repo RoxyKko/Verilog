@@ -13,7 +13,7 @@ module divider_1dot5 (
 
 input clk;
 input reset;
-output reg div1d5;
+output wire div1d5;
 output reg clkR;
 output reg clkD;
 
@@ -57,7 +57,7 @@ begin
 end
 
 //下降沿计数3分频
-always @(posedge clk or posedge reset)
+always @(negedge clk or posedge reset)
 begin
     if(reset)
     begin
@@ -76,7 +76,7 @@ begin
     end
 end
 
-always @(posedge clk or posedge reset)
+always @(negedge clk or posedge reset)
 begin
     if(reset)
     begin
