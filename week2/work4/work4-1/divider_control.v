@@ -1,4 +1,4 @@
-module divider(
+module divider_control(
     clk,
     d,
     fout
