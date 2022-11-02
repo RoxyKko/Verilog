@@ -26,7 +26,7 @@ always @(posedge clk)
 
 always @(posedge cnt8)
     begin
-        if(cnt8 < 8'd128)
+        if(cnt8 == 8'd254)
         begin
             cout <= 1'b1;
         end

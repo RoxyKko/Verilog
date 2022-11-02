@@ -13,9 +13,9 @@ output reg fout;
 //产生50khz的时钟
 reg [9:0]cnt10;
 reg clk50khz;
-always @(posedge clk50m or posedge reset)
+always @(posedge clk50m or negedge reset)
 begin
-    if(reset)
+    if(!reset)
     begin
         cnt10 <= 10'd0;
     end
@@ -29,9 +29,9 @@ begin
     end
 end
 
-always @(posedge cnt10 or posedge reset)
+always @(posedge cnt10 or negedge reset)
 begin
-    if(reset)
+    if(!reset)
     begin
         clk50khz <= 1'b0;
     end

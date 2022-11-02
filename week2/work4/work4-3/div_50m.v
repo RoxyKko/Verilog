@@ -8,23 +8,23 @@ input clk;
 output reg clk_50khz;
 input reset;
 
-reg [25:0] cnt26;
+reg [9:0] cnt10;
 
 always @(posedge clk or posedge reset)
 begin
     if(reset)
     begin
-        cnt26 <= 26'd0;
+        cnt10 <= 20'd0;
     end
     else
     begin
-        if(cnt26 == 26'd49_999)
+        if(cnt10 == 9'd999)
         begin
-            cnt26 <= 26'd0;
+            cnt10 <= 10'd0;
         end
         else
         begin
-            cnt26 <= cnt26 + 1;
+            cnt10 <= cnt10 + 1;
         end
     end
 end
@@ -35,7 +35,7 @@ begin
     begin
         clk_50khz <= 1'd0;
     end
-    else if(cnt26 < 26'd24_999)
+    else if(cnt10 < 10'd500)
     begin
         clk_50khz <= 1'd1;
     end
